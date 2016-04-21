@@ -33,7 +33,7 @@
 
 'use strict'
 
-angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect' , [ '$sce', '$timeout', '$templateCache', function ( $sce, $timeout, $templateCache ) {
+angular.module( 'ng-multi-select', ['ng'] ).directive( 'angularMultiSelect' , [ '$sce', '$timeout', '$templateCache', function ( $sce, $timeout, $templateCache ) {
     return {
         restrict: 
             'AE',
@@ -68,7 +68,7 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
          */
                                                          
          templateUrl: 
-            'isteven-multi-select.htm',                            
+            'ng-multi-select.htm',                            
 
         link: function ( $scope, element, attrs ) {                       
 
@@ -957,11 +957,11 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                 $scope.lang.nothingSelected = $sce.trustAsHtml( $scope.translation.nothingSelected );                
             }
             else {
-                $scope.lang.selectAll       = $sce.trustAsHtml( $scope.icon.selectAll  + '&nbsp;&nbsp;Select All' );                
-                $scope.lang.selectNone      = $sce.trustAsHtml( $scope.icon.selectNone + '&nbsp;&nbsp;Select None' );
-                $scope.lang.reset           = $sce.trustAsHtml( $scope.icon.reset      + '&nbsp;&nbsp;Reset' );
-                $scope.lang.search          = 'Search...';
-                $scope.lang.nothingSelected = 'None Selected';                
+                $scope.lang.selectAll       = $sce.trustAsHtml( $scope.icon.selectAll  + '&nbsp;&nbsp;Hepsini seç' );
+                $scope.lang.selectNone      = $sce.trustAsHtml( $scope.icon.selectNone + '&nbsp;&nbsp;Filtreleri kaldır' );
+                $scope.lang.reset           = $sce.trustAsHtml( $scope.icon.reset      + '&nbsp;&nbsp;Sıfırla' );
+                $scope.lang.search          = 'Ara...';
+                $scope.lang.nothingSelected = 'Filtre Seçiniz';
             }
             $scope.icon.tickMark = $sce.trustAsHtml( $scope.icon.tickMark );
                 
@@ -1107,5 +1107,5 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
             '</div>'+
         '</div>'+
     '</span>';
-	$templateCache.put( 'isteven-multi-select.htm' , template );
+	$templateCache.put( 'ng-multi-select.htm' , template );
 }]); 
